@@ -1,0 +1,13 @@
+resources:
+  - ../../base
+
+namespace: prod
+
+patches:
+  - path: 'replicas.yml'
+
+configMapGenerator:
+  - name: mykustom-map
+    envs:
+      - config.properties
+    behavior: replace
